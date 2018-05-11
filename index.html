@@ -1,0 +1,83 @@
+<!doctype html>
+<html>
+
+	<head>
+		<meta charset="utf-8">
+		<link type="text/css" rel="stylesheet" href="css/common.css" />
+		<title>欢乐走迷宫</title>
+		<meta name="viewport" content="width=device-width, initial-scale=1,maximum-scale=1, user-scalable=no">
+
+		<script>
+			(function(doc, win) {
+				var docEl = doc.documentElement,
+					resizeEvt = 'onorientationchange' in window ? 'onorientationchange' : 'resize',
+					recalc = function() {
+						var clientWidth = docEl.clientWidth;
+						if(!clientWidth) return;
+						if(clientWidth >= 640) {
+							docEl.style.fontSize = '100px';
+						} else {
+							docEl.style.fontSize = 100 * (clientWidth / 640) + 'px';
+						}
+					};
+
+				if(!doc.addEventListener) return;
+				win.addEventListener(resizeEvt, recalc, false);
+				doc.addEventListener('DOMContentLoaded', recalc, false);
+			})(document, window);
+		</script>
+		
+		<script src="https://res.wx.qq.com/open/js/jweixin-1.0.0.js"></script>
+
+		<script src="lib/jquery-2.1.1.min.js"></script>
+		<script src="lib/three.min.js"></script>
+		<script src="lib/tween.min.js"></script>
+		<script src="lib/TweenMax.min.js"></script>
+		<script src="lib/chroma.js"></script>
+		<script src="lib/pixi.min.js"></script>
+		<script src="lib/mathutils.js"></script>
+		<script src="lib/MTLLoader.js"></script>
+		<script src="lib/OBJLoader.js"></script>
+		<script src="lib/stats.min.js"></script>
+
+		<script src="js/shaders/ConvolutionShader.js"></script>
+		<script src="js/shaders/CopyShader.js"></script>
+		<script src="js/shaders/FilmShader.js"></script>
+
+		<script src="js/shaders/EffectComposer.js"></script>
+		<script src="js/shaders/ShaderPass.js"></script>
+		<script src="js/shaders/MaskPass.js"></script>
+		<script src="js/shaders/RenderPass.js"></script>
+		<script src="js/shaders/BloomPass.js"></script>
+		<script src="js/shaders/FilmPass.js"></script>
+		<script src="js/shaders/DigitalGlitch.js"></script>
+		<script src="js/shaders/GlitchPass.js"></script>
+		<script src="js/shaders/GodrayShader.js"></script>
+
+		
+
+	</head>
+
+	<body>
+		<div id="wrapper">
+			<div id="canvas-frame"></div>
+		</div>
+		<div id="pixiStage">
+		</div>
+
+		<script src="js/weixinUtil.js"></script>
+		<script src="js/Loading.js"></script>
+		<script src="js/PixiUtil.js"></script>
+		<script src="js/Particles.js"></script>
+		<script src="js/Key.js"></script>
+		<script src="js/Maze.js"></script>
+		<script src="js/ThreeArea.js"></script>
+		<script src="js/PixiArea.js"></script>
+		<script src="js/man.js"></script>
+		<script src="js/Controls.js"></script>
+		<script src="js/Rocker.js"></script>
+		<script src="js/Main.js"></script>
+
+	</body>
+
+</html>
